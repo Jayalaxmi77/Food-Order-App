@@ -1,0 +1,43 @@
+.toolbar {
+    display: inline-block;
+    background-color: rgb(255, 136, 0);
+
+    .toolbar-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .text {
+        font-size: 30px;
+        justify-content: space-between;
+        color: #fff;
+        font-weight: 900;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 600;
+    }
+
+    .cart {
+        display: flex;
+
+        margin: 0 2rem;
+    }
+
+    a:hover {
+        border-bottom: 1.5px solid #fff;
+        transition: 0.1s;
+    }
+
+    .cart-icon {
+        display: flex;
+        position: relative;
+        top: 8px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,86 @@
+.container {
+    display: grid;
+    margin: 2rem 4rem;
+
+    mat-divider{
+        border: 1px solid rgba(128, 128, 128, 0.612) !important;
+        margin: 1rem;
+    }
+    mat-card {
+        background-color: #fff;
+        // border-bottom: 1px solid gray;
+        display: flex;
+        width: 100%;
+        margin: 10px;
+        mat-card-title {
+            color: orange;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        mat-card-content {
+            display: flex;
+            // justify-content: space-between;
+           
+            justify-content: space-around;
+            
+            img {
+                max-width: 11%;
+                height: 120px;
+                border-radius: 200px;
+            }
+
+            button {
+                height: 2rem;
+
+            }
+
+            .quantity {
+                select {
+                    width: 70px;
+                    padding: 5px;
+                    border-radius: 10px !important;
+                    color: green !important;
+                    font-weight: 800 !important;
+                }
+            }
+        }
+
+        .price{
+
+            font-size: 20px;
+            font-weight: 800;
+            color: green;
+            span{
+                font-size: 16px;
+                color: black;
+                font-weight: 500;
+            }
+
+
+        }
+        .checkout {
+            display: grid;
+            justify-content: right;
+            // flex-wrap: wrap;
+            align-items: center;
+            gap: 5px;
+
+            h1{
+                color: black;
+                border-bottom: 1.5px dashed green;
+                text-align: center;
+            }
+
+            .food-count{
+                font-size: 16px;
+               text-align: center;
+                color: orange;
+            }
+            .total{
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+    }
+}

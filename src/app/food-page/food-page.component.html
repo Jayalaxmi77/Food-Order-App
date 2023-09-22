@@ -1,0 +1,49 @@
+<app-notfound-page [visible]="!food" notFoundMessage="Product not Found" resetLinkText="Go to Homepage"></app-notfound-page>
+<div class="container">
+  <mat-card>
+    <div class="image">
+      <img mat-card-image [src]="food.imageUrl" [alt]="food.name" />
+    </div>
+    <mat-card-content style="background-color: #fff">
+      <mat-card-title>
+        {{ food.name }}
+        <mat-icon class="favorite {{ food.favourite ? '' : 'not' }}"
+          >favorite</mat-icon
+        >
+      </mat-card-title>
+
+      <div class="rating">
+        <!-- Star Rating -->
+        <ngb-rating
+          [max]="5"
+          [(rate)]="food.star"
+          [readonly]="true"
+        ></ngb-rating>
+      </div>
+
+      <div class="origins">
+        <span *ngFor="let origin of food.origins">
+          {{ origin }}
+        </span>
+        <app-tags [foodPageTags]="food.tags"></app-tags>
+      </div>
+
+      <div class="cooktime">
+        <span style="color: black; display: flex; font-size: 14px">
+          Estimated time :
+          <strong style="color: green; font-size: 16px; margin: 0px 5px">
+            {{ food.cookTime }}
+          </strong>
+          mins
+        </span>
+      </div>
+
+      <div class="price">
+        <span>Rs. </span> <strong>{{ food.price }}.00</strong>
+        <button (click)="addToCart()" mat-flat-button color="primary">
+          <mat-icon>shopping_cart</mat-icon>Add to Cart
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

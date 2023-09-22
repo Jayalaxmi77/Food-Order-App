@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+*{
+    box-sizing: border-box;
+    // font-family: 'Mooli', sans-serif !important ;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+body{
+    margin: 0;
+    font-family: 'Mooli', sans-serif !important ;
+
+    
+}@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+mat-icon{
+    font-family: 'Material Icons' !important;
+  }
+
+   
+
+
+
+    

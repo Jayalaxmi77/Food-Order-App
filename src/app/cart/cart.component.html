@@ -1,0 +1,52 @@
+<app-notfound-page
+  [visible]="!Cart || Cart.items.length <= 0"
+  notFoundMessage="Items not Found"
+  resetLinkText="Go & Buy"
+></app-notfound-page>
+<div class="container" *ngIf="Cart && Cart.items.length > 0">
+  <mat-card *ngFor="let cartItem of Cart.items" style="box-shadow: none">
+    <mat-card-content>
+      <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
+      <mat-card-title routerLink="/food/{{ cartItem.food.id }}">
+        {{ cartItem.food.name }}
+      </mat-card-title>
+
+      <div class="quantity">
+        <!-- <mat-label>Quantity</mat-label> -->
+        <select
+          #quantitySelect
+          (change)="changeQuantity(cartItem, quantitySelect.value)"
+        >
+          <option *ngFor="let option of quantityOptions">{{ option }}</option>
+        </select>
+      </div>
+
+      <div class="price"><span>Rs.</span> {{ cartItem.price }}.00</div>
+
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="removeFromCart(cartItem)"
+      >
+        Remove
+      </button>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+  </mat-card>
+
+  <mat-card style="box-shadow: none">
+    <div class="checkout">
+      <div>
+        <h1>Total</h1>
+      </div>
+      <div class="food-count">Items : {{ Cart.items.length }}</div>
+      <div class="total">
+        Price :
+        <strong style="color: green">Rs. {{ Cart.totalPrice }}.00</strong>
+      </div>
+      <button color="warn" routerLink="/checkout" mat-flat-button>
+        Proceed to Checkout
+      </button>
+    </div>
+  </mat-card>
+</div>

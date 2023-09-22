@@ -1,0 +1,11 @@
+<div class="search-box">
+  <input
+    matInput
+    placeholder="Search foods"
+    [(ngModel)]="searchItem"
+    (change)="search()"
+  />
+  <button mat-icon-button color="warn" (click)="search()">
+    <mat-icon matSuffix>search</mat-icon>
+  </button>
+</div>

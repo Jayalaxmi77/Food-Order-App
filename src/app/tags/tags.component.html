@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-chip-listbox aria-label="Fish selection" *ngIf="tags">
+    <mat-chip-option
+  
+      color="warn"
+      *ngFor="let tag of tags"
+      routerLink="/tag/{{ tag.name }}"
+      >{{ tag.name }} ({{ tag.count }})</mat-chip-option
+    >
+  </mat-chip-listbox>
+</div>
+<div class="container">
+  <mat-chip-listbox aria-label="Fish selection" *ngIf="foodPageTags">
+    <mat-chip-option
+      color="warn"
+      *ngFor="let tagname of foodPageTags"
+      routerLink="/tag/{{ tagname }}"
+      >{{ tagname }}
+    </mat-chip-option>
+  </mat-chip-listbox>
+</div>
